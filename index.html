@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #invitationContainer {
+            overflow-y: hidden;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #invitationWrapper {
+            position: relative;
+            height: 70vh;
+            align-self: center;
+            align-content: center;
+            overflow: visible;
+        }
+
+        #invitation {
+            height: 70vh;
+            box-shadow: 0px 0px 21px -7px black;
+            filter: blur(4px);
+        }
+
+        #invitationWrapper.clicked #invitation {
+            filter: blur(0);
+        }
+
+
+        #left {
+            content: '';
+            z-index: 1;
+            position: absolute;
+            background: #cdcaca70;
+            top: 0;
+            left: 0;
+            width: 60%;
+            height: 70vh;
+            transition-duration: 2s;
+            box-shadow: 10px 0px 21px -7px black;
+            transform: translate(0px, 20%);
+            transform-origin: 0% 50%;
+            transform: perspective(500px) rotateY(0deg);
+            transform-origin: left center;
+            filter: contrast(0.5);
+        }
+        #invitationWrapper.clicked #left {
+            /* width: 0; */
+            box-shadow: none;
+            /* transform: skew(0deg, 20deg); */
+
+            transform: perspective(500px) rotateY(-120deg);
+            /* transform: translate(0px, 21%) perspective(1px) rotateY(-90deg); */
+        }
+
+        #right {
+            content: '';
+            z-index: 2;
+            position: absolute;
+            background: #cdcaca70;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 70vh;
+            transition-duration: 2s;
+            box-shadow: 10px 0px 21px -7px black;
+            transform: translate(0px, 20%);
+            /* transform: translate3d(-16.3vmin, 0vmin, 0vmin) rotateY(-0.1deg); */
+            transform: perspective(500px) rotateY(0deg);
+            transform-origin: right center;
+            transition-delay: 0.5s;
+            filter: contrast(0.5);
+        }
+        #invitationWrapper.clicked #right {
+            /* width: 0; */
+            /* right: -50%; */
+            box-shadow: none; 
+            /* height: 80vh; */
+            transform: perspective(500px) rotateY(120deg);
+            /* transform: translate(0px, 10vh) perspective(10px) rotateY(1deg) */
+
+        }
+
+        #waxMark {
+            position: absolute;
+            top: 50%;
+            transition-duration: 2s;
+        }
+        #waxMark2 {
+            position: absolute;
+            top: 50%;
+            transition-duration: 2s;
+        }
+        #wax {
+            content: '';
+            z-index: 2;
+            /* background: #ae7d44; */
+            width: 12vh;
+            height: 12vh;
+            /* position: absolute; */
+            top: calc(50% - 10vh);
+            /* left: calc(52%); */
+            border-radius: 50%;
+            transition-duration: 2s;
+
+            filter: contrast(50%) sepia(70%);
+        }
+        #left #wax {
+            left: calc(83%);
+        }
+        #left #mark {
+            left: calc(83%);
+        }
+
+        #left #waxContainer {
+            top: 38%;
+            left: calc(86%);
+            position: absolute;
+            width: 4vh;
+            height: 12vh;
+            overflow: hidden;
+        }
+        #left #markContainer {
+            top: 38%;
+            left: calc(86%);
+            position: absolute;
+            width: 4vh;
+            height: 12vh;
+            overflow: hidden;
+        }
+        #right #waxContainer {
+            top: 38%;
+            right: calc(47%);
+            position: absolute;
+            width: 8vh;
+            height: 12vh;
+            overflow: hidden;
+            filter: drop-shadow(2px 4px 6px black);
+            z-index: 2;
+        }
+        #right #markContainer {
+            top: 38%;
+            right: calc(52%);
+            position: absolute;
+            width: 6.5vh;
+            height: 12vh;
+            overflow: hidden;
+        }
+        #right #waxContainer #wax,
+        #right #markContainer #mark  {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        #mark {
+            content: '';
+            z-index: 3;
+            /* background: #ae7d44; */
+            /* width: 12vh;
+            height: 12vh; */
+            /* position: absolute; */
+            top: calc(50% - 10vh);
+            /* left: calc(52%); */
+            border-radius: 50%;
+            transition-duration: 2s;
+            width: 7.5vh;
+            height: 7.5vh;
+            padding: 2.2vh 1vh;
+            /* filter: contrast(50%) sepia(70%); */
+        }
+
+        #waxContainer {
+            width: 6vh;
+        }
+        #markContainer {
+            width: 6vh;
+        }
+
+        #invitationWrapper.clicked #mark {
+            /* opacity: 0; */
+            /* left: -6vh; */
+        }
+
+        #invitationWrapper.clicked #waxMark {
+            /* opacity: 0; */
+            /* left: -6vh; */
+        }
+
+        #invitationWrapper.clicked #waxMark2 {
+            /* opacity: 0; */
+            /* left: 12vh; */
+        }
+
+        #feather {
+            transform: rotate(100deg);
+            width: 16vh;
+            top: 20%;
+            position: absolute;
+            z-index: 1;
+            left: -5%;
+            filter: drop-shadow(2px 4px 6px black);
+        }
+    </style>
+<body>
+    <div id="invitationContainer">
+        <div id="invitationWrapper">
+            <div id="left">
+                <div id="waxContainer">
+                    <img id="wax" src="./wax.png"/>
+                </div>
+                <div id="markContainer">
+                    <img id="mark" src="./pngwing.com.png"/>
+                </div>
+            </div>
+            <div id="right">
+                <div id="waxContainer">
+                    <img id="wax" src="./wax.png"/>
+                </div>
+                <div id="markContainer">
+                    <img id="mark" src="./pngwing.com.png"/>
+                </div>
+                <img id="feather" src="./pngwing.com2.png"/>
+            </div>
+            <img src="./EROTOKRITOS GEORGIA 05-07-24_page-0001.jpg" id="invitation"/>
+            
+        </div>
+    </div>
+</body>
+<script>
+    let mark = document.getElementById("invitationContainer");
+    mark.addEventListener("click", () => {
+        let invitationWrapper = document.getElementById("invitationWrapper");
+        if (invitationWrapper.classList.contains('clicked')) {
+            invitationWrapper.classList.remove("clicked");
+        } else {
+            invitationWrapper.classList.add("clicked");
+        }
+    });
+    
+ </script>
+</html>
