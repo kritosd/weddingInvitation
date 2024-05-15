@@ -12,6 +12,7 @@
             display: flex;
             justify-content: center;
             height: 100vh;
+            cursor: pointer;
         }
 
         #invitationWrapper {
@@ -26,6 +27,7 @@
             height: 70vh;
             box-shadow: 0px 0px 21px -7px black;
             filter: blur(4px);
+            transition-duration: 2s;
         }
 
         #invitationWrapper.clicked #invitation {
@@ -206,10 +208,52 @@
             left: -5%;
             filter: drop-shadow(2px 4px 6px black);
         }
+
+        #invitationWrapper #clickHere{
+            position: absolute;
+            z-index: 6;
+            /* border: 1px solid black; */
+            /* padding: 3vh 0; */
+            text-align: center;
+            font-size: 2vh;
+            top: 60%;
+            border-radius: 3px;
+            width: 100%;
+            /* left: 3%; */
+            /* transform: translateX(50%); */
+            transition-delay: 2s;
+            transition-duration: 2s;
+            display: flex;
+            justify-content: center;
+        }
+
+        #invitationWrapper.clicked #clickHere{
+            transition-delay: 0s;
+            color: transparent;
+            border-color: transparent;
+        }
+        #invitationWrapper.clicked #here{
+            transition-delay: 0s;
+            color: transparent;
+            border-color: transparent;
+        }
+
+        #here {
+            transition-delay: 2s;
+            transition-duration: 2s;
+            width: fit-content;
+            border: 1px solid black;
+            color: black;
+            padding: 1vh 3vh;
+            border-radius: 3px;
+        }
     </style>
 <body>
     <div id="invitationContainer">
         <div id="invitationWrapper">
+            <div id="clickHere">
+                <div id="here">Πατήστε Για Άνοιγμα</div>
+            </div>
             <div id="left">
                 <div id="waxContainer">
                     <img id="wax" src="./wax.png"/>
