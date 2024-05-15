@@ -62,7 +62,7 @@
         }
 
         #right {
-            content: '';
+            /* content: ''; */
             z-index: 2;
             position: absolute;
             background: #cdcaca70;
@@ -100,7 +100,7 @@
             transition-duration: 2s;
         }
         #wax {
-            content: '';
+            /* content: ''; */
             z-index: 2;
             /* background: #ae7d44; */
             width: 12vh;
@@ -118,6 +118,7 @@
         }
         #left #mark {
             left: calc(83%);
+            padding: 2.2vh;
         }
 
         #left #waxContainer {
@@ -247,6 +248,12 @@
             padding: 1vh 3vh;
             border-radius: 3px;
         }
+
+        #left.second {
+            box-shadow: none;
+            background: transparent;
+            z-index: 2
+        }
     </style>
 <body>
     <div id="invitationContainer">
@@ -273,6 +280,14 @@
             </div>
             <img src="./EROTOKRITOS GEORGIA 05-07-24_page-0001.jpg" id="invitation"/>
             
+            <div id="left" class="second">
+                <div id="waxContainer">
+                    <img id="wax" src="./wax.png"/>
+                </div>
+                <div id="markContainer">
+                    <img id="mark" src="./pngwing.com.png"/>
+                </div>
+            </div>
         </div>
     </div>
 </body>
