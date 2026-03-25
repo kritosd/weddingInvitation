@@ -26,20 +26,13 @@
       align-self: center;
       align-content: center;
       overflow: visible;
-      transform: rotate(90deg);
-      transition-duration: 4s;
-    }
-
-    #invitationWrapper.clicked {
-      transform: rotate(0deg);
-      transform: scale(1.5);
     }
 
     #invitation {
       height: 70vh;
       /* box-shadow: 0px 0px 21px -7px black; */
       filter: blur(4px) drop-shadow(2px 2px 3px black);
-      transition-duration: 4s;
+      transition-duration: 2s;
     }
 
     #invitationWrapper.clicked #invitation {
@@ -50,17 +43,12 @@
       /* content: ''; */
       z-index: 1;
       position: absolute;
-      /* background: #cdcaca70; */
-      background: url("./weddin-invitation-bg.png");
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-      background-position: center;
+      background: #cdcaca70;
       top: 0;
       left: 0;
-      width: 40%;
-      height: 100%;
-      transition-duration: 4s;
-
+      width: 60%;
+      height: 70vh;
+      transition-duration: 2s;
       /* box-shadow: 10px 0px 21px -7px black; */
       /* filter:  drop-shadow(2px 2px 3px black); */
       transform: translate(0px, 20%);
@@ -81,18 +69,12 @@
       /* content: ''; */
       z-index: 2;
       position: absolute;
-      /* background: #cdcaca70; */
-      background: url("./weddin-invitation-bg.png");
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-      background-position: center;
+      background: #cdcaca70;
       top: 0;
       right: 0;
-      width: 70%;
-      height: 100%;
-      /* transition-duration: 4s; */
-      transition: transform 4s ease 1s; /* duration 4s, delay 1s */
-
+      width: 50%;
+      height: 70vh;
+      transition-duration: 2s;
       /* box-shadow: 10px 0px 21px -7px black; */
       /* filter: contrast(0.5) drop-shadow(2px 2px 3px black); */
       transform: translate(0px, 20%);
@@ -121,19 +103,18 @@
       transition-duration: 2s;
     }
     #wax {
+      /* content: ''; */
+      z-index: 2;
+      /* background: #ae7d44; */
       width: 12vh;
       height: 12vh;
+      /* position: absolute; */
+      top: calc(50% - 10vh);
+      /* left: calc(52%); */
       border-radius: 50%;
+      transition-duration: 2s;
 
-      filter: contrast(60%) sepia(80%) brightness(0.9)
-        drop-shadow(2px 2px 3px black);
-
-      /* subtle light for realism */
-      background: radial-gradient(
-        circle at 30% 30%,
-        rgba(255, 255, 255, 0.25),
-        transparent 60%
-      );
+      filter: contrast(50%) sepia(70%) drop-shadow(2px 2px 3px black);
     }
     #left #wax {
       left: calc(83%);
@@ -141,28 +122,27 @@
     #left #mark {
       left: calc(83%);
       padding: 2.2vh;
-      transform: rotate(-90deg);
     }
 
     #left #waxContainer {
-      top: 41%;
-      left: calc(80%);
+      top: 38%;
+      left: calc(86%);
       position: absolute;
       width: 4vh;
       height: 12vh;
       overflow: hidden;
     }
     #left #markContainer {
-      top: 41%;
-      left: calc(80%);
+      top: 38%;
+      left: calc(86%);
       position: absolute;
       width: 4vh;
       height: 12vh;
       overflow: hidden;
     }
     #right #waxContainer {
-      top: 41%;
-      right: calc(63%);
+      top: 38%;
+      right: calc(47%);
       position: absolute;
       width: 8vh;
       height: 12vh;
@@ -171,8 +151,8 @@
       z-index: 2;
     }
     #right #markContainer {
-      top: 41%;
-      right: calc(67%);
+      top: 38%;
+      right: calc(52%);
       position: absolute;
       width: 6.5vh;
       height: 12vh;
@@ -183,21 +163,22 @@
       position: absolute;
       top: 0;
       right: 0;
-      transform: rotate(-90deg);
     }
     #mark {
+      /* content: '';  */
       z-index: 3;
+      /* background: #ae7d44; */
+      /* width: 12vh;
+            height: 12vh; */
+      /* position: absolute; */
+      top: calc(50% - 10vh);
+      /* left: calc(52%); */
+      border-radius: 50%;
+      transition-duration: 2s;
       width: 7.5vh;
       height: 7.5vh;
       padding: 2.2vh 1vh;
-
-      /* Make it blend into wax */
-      mix-blend-mode: multiply;
-
-      /* Turn it into engraving tone */
-      filter: grayscale(100%) contrast(140%) brightness(60%);
-
-      opacity: 0.9;
+      /* filter: contrast(50%) sepia(70%); */
     }
 
     #waxContainer {
@@ -234,16 +215,14 @@
 
     #invitationWrapper #clickHere {
       position: absolute;
-
-      transform: rotate(-90deg);
       z-index: 6;
       /* border: 1px solid black; */
       /* padding: 3vh 0; */
       text-align: center;
       font-size: 2vh;
-      top: 46%;
+      top: 60%;
       border-radius: 3px;
-      width: 130%;
+      width: 100%;
       /* left: 3%; */
       /* transform: translateX(50%); */
       transition-delay: 2s;
@@ -275,7 +254,7 @@
 
     #left.second {
       box-shadow: none;
-      /* background: transparent; */
+      background: transparent;
       z-index: 2;
     }
   </style>
