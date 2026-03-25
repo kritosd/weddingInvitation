@@ -22,7 +22,7 @@
 
     #invitationWrapper {
       position: relative;
-      height: 70vh;
+      height: 100vw;
       align-self: center;
       align-content: center;
       overflow: visible;
@@ -32,7 +32,7 @@
 
     #invitationWrapper.clicked {
       transform: rotate(0deg);
-      transform: scale(1.5);
+      transform: scale(1.2);
     }
 
     #invitation {
@@ -278,8 +278,24 @@
       /* background: transparent; */
       z-index: 2;
     }
+
+    .loader {
+      position: fixed;
+      inset: 0;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+      z-index: 9999;
+      font-size: 2rem;
+    }
+    .loader.hidden {
+      display: none;
+    }
   </style>
   <body>
+    <div id="loader">loading...</div>
     <div id="invitationContainer">
       <div id="invitationWrapper">
         <div id="clickHere">
@@ -324,6 +340,16 @@
       } else {
         invitationWrapper.classList.add("clicked");
       }
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const loader = document.getElementById("loader");
+      loader.classList.add("hidden");
+
+      setTimeout(() => {
+        loader.remove(); // optional cleanup
+      }, 300);
     });
   </script>
 </html>
