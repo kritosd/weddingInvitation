@@ -19,10 +19,18 @@
       height: 100vh;
       cursor: pointer;
     }
+    @media (max-width: 800px) {
+      #invitationContainer {
+        width: 100% !important;
+      }
+      #invitationWrapper {
+        height: 100vw !important;
+      }
+    }
 
     #invitationWrapper {
       position: relative;
-      height: 100vw;
+      height: 70vh;
       align-self: center;
       align-content: center;
       overflow: visible;
@@ -343,7 +351,7 @@
     });
   </script>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("load", function () {
       const loader = document.getElementById("loader");
       loader.classList.add("hidden");
 
